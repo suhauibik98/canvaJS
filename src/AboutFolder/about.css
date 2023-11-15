@@ -16,9 +16,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* .animate__animated{
-  background-color: red;
-} */
 
 .section{
   padding: 8px;
@@ -60,8 +57,14 @@ p{
 
 }
 
-.aboutText h1{
+.aboutText h1,
+.mainTextGrid h1{
   font-size: 2rem;
+  text-align: center;
+  border-bottom: solid 1px var(--gern);
+  padding-bottom: 2px;
+  width: fit-content;
+  margin: auto;
 }
 .pAbout{
   font-weight: 600;
@@ -133,11 +136,11 @@ hr{
 }
 
 .rowAbout{
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
-  gap: 50px;
+  /* gap: 50px; */
 }
 
 
@@ -225,7 +228,7 @@ hr{
  /**/
  /*photo grid */
 .mainTextGrid{
-  width: 70%;
+  width: 75%;
   text-align: center;
   margin: auto;
   border-radius: 10px;
