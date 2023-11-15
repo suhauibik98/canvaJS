@@ -16,6 +16,10 @@ body {
   scroll-behavior: smooth;
 }
 
+/* .animate__animated{
+  background-color: red;
+} */
+
 .section{
   padding: 8px;
   display: flex;
@@ -42,42 +46,32 @@ p{
   text-align: center;
   font-size: 18px;
 }
-.btnNav {
-  width: 15em;
-  height: 3em;
-  left: 0;
-  background: none;
-  color: #ffffff;
-  border: 3px solid var(--bleu);
-  border-radius: 20px;
-  font-weight: 700;
-  transition: 0.5s ease;
-  font-size: 18px;
-}
-.btnNav:hover {
-  background-color: var(--greenB);
-  border: 3px solid var(--gern);
-  
-  box-shadow: 0px 0px 8px 4px var(--bleu);
-}
+
 .aiImg {
   max-width: 800px;
   border-radius: 70px;
 
 }
+.aboutText{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.aboutText h1{
+  font-size: 2rem;
+}
+.pAbout{
+  font-weight: 600;
+  font-size: 1rem;
+}
 
 .circleImg {
-  /* width: 50%;
-  height: 50%;
-  box-shadow: 0px 43px 258px rgb(215 215 215 / 108%), 0px 0px 84px rgb(166 191 203 / 150%) inset;
-  border-radius: 50%;
-  transform: rotateX(85deg);
-  position: relative;
-  transform-style: preserve-3d;
   display: flex;
-  justify-content: center;
-  border: 0 86px 97px 71px solid;
-  */
+    flex-direction: column;
+    justify-content: center;
 }
 .moving-image {
    position: relative; 
@@ -85,6 +79,8 @@ p{
    transform: translate(1);
    animation: moving 3s infinite linear;
    filter: drop-shadow(8px 8px 4px var(--bleu) );
+   width: 100%;
+   margin:0 auto;
   }
   @keyframes moving {
 
