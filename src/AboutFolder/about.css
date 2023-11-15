@@ -1,0 +1,262 @@
+:root {
+  --bleu: rgb(60 124 192);
+  --gern: rgb(80 185 174);
+  --greenB: rgb(8, 107, 97);
+  --backG: rgb(0 0 34);
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+  background-image: url("../imges/backgg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff !important;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.section{
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 5px;
+}
+.row {
+  margin: 6px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  font-size: 42px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+p{
+  text-align: center;
+  font-size: 18px;
+}
+.btnNav {
+  width: 15em;
+  height: 3em;
+  left: 0;
+  background: none;
+  color: #ffffff;
+  border: 3px solid var(--bleu);
+  border-radius: 20px;
+  font-weight: 700;
+  transition: 0.5s ease;
+  font-size: 18px;
+}
+.btnNav:hover {
+  background-color: var(--greenB);
+  border: 3px solid var(--gern);
+  
+  box-shadow: 0px 0px 8px 4px var(--bleu);
+}
+.aiImg {
+  max-width: 800px;
+  border-radius: 70px;
+
+}
+
+.circleImg {
+  /* width: 50%;
+  height: 50%;
+  box-shadow: 0px 43px 258px rgb(215 215 215 / 108%), 0px 0px 84px rgb(166 191 203 / 150%) inset;
+  border-radius: 50%;
+  transform: rotateX(85deg);
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  border: 0 86px 97px 71px solid;
+  */
+}
+.moving-image {
+   position: relative; 
+   transform: rotate(10deg); 
+   transform: translate(1);
+   animation: moving 3s infinite linear;
+   filter: drop-shadow(8px 8px 4px var(--bleu) );
+  }
+  @keyframes moving {
+
+    0%,100%{
+      left: 6%;
+      
+      
+    }
+    50%{
+      left: 9%;
+    
+    }
+    
+  }
+ /* footer*/
+
+ .copyright-area {
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a {
+  color: var(--gern);
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a {
+  color: var(--bleu);
+}
+.footer-menu li a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #878787;
+}
+ /**/
+
+
+
+
+ /*  card */
+hr{
+
+  
+}
+
+.rowAbout{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+}
+
+
+ .card-container {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card-container::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(-45deg,  var(--greenB) 0%, #00dbde 100% ); */
+  box-shadow: 0 0 8px 2px var(--bleu);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.cardi {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.cardi .img-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px 2px var(--bleu);
+  transition: scale 0.6s, rotate 0.6s, filter 1s;
+}
+
+.cardi .img-content img {
+  width: 100%;
+  height: 100%;
+  fill: #212121;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.cardi .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  color: #e8e8e8;
+  padding: 20px 24px;
+  line-height: 1.5;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.cardi .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.cardi:hover .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardi:hover .img-content {
+  scale: 2.5;
+  rotate: 30deg;
+  filter: blur(7px);
+}
+.cardi:hover .img-content svg {
+  fill: transparent;
+}
+ /**/
+ /*photo grid */
+.mainTextGrid{
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  border-radius: 10px;
+}
+ .photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 16px;
+}
+.grid-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 1px var(--bleu);
+  background-color: #ffffffd2;
+  transition: 0.3s ease;
+}
+.grid-item:hover{
+  box-shadow: 0 0 8px 4px var(--greenB);
+  transform: scale(1.1);
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+ /**/
