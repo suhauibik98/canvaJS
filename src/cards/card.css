@@ -12,7 +12,7 @@ body {
   height: 100vh;
   background-image: url("../imges/backgg.png");
   background-repeat: repeat-y;
-  background-size: contain;
+  background-size: cover;
   color: var(--fontC);
   transition: 1s ease;
 }
