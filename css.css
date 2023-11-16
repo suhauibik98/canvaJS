@@ -29,12 +29,12 @@ body {
 
 .content h2:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 0.5px var(--bleu);
+  -webkit-text-stroke: 1px var(--bleu);
 }
 
 .content h2:nth-child(2) {
   color: var(--greenB);
-  animation: animate 4s ease-in-out infinite;
+  animation: animate 2s ease-in-out infinite;
 }
 
 @keyframes animate {
@@ -243,27 +243,21 @@ canvas {
   border-radius: 5rem;
   transition: 0.5s;
   animation: gradient_301 5s ease infinite;
-  border: double 4px transparent;
-  background-image: linear-gradient(#212121, #212121),
-    linear-gradient(
-      137.48deg,
-      var(--gern) 20%,
-      var(--bleu) 45%,
-      #8f51ea 67%,
-      var(--bleu) 87%
-    );
-  background-origin: border-box;
-  background-clip: content-box, border-box;
+  border: 2px solid var(--gern);
+  background: none;
 }
 
+.btna:hover{
+  transform: scale(1.1);
+  box-shadow: 0px 0px 71px rgba(0, 195, 255, 0.5),
+  0px 0px 106px rgba(36, 160, 218, 0.5) ;;
+}
 #containera-stars {
   position: absolute;
-
   width: 100%;
   height: 100%;
   overflow: hidden;
   transition: 0.5s;
-
   border-radius: 5em;
 }
 
@@ -290,18 +284,18 @@ strong {
   z-index: -1;
 }
 
-.circle:nth-of-type(1) {
+/* .circle:nth-of-type(1) {
   background: rgba(254, 83, 186, 0.636);
 }
 
 .circle:nth-of-type(2) {
   background: rgba(142, 81, 234, 0.704);
-}
+} */
 
-.btna:hover #containera-stars {
+/* .btna:hover #containera-stars {
   z-index: 1;
-  background-color: #212121;
-}
+  background-color: #141414;
+} 
 
 .btna:hover {
   transform: scale(1.1);
@@ -317,7 +311,7 @@ strong {
 .btna:active .circle {
   background: #fe53bb;
 }
-
+*/
 #stars {
   position: relative;
   background: transparent;
@@ -589,6 +583,7 @@ strong {
   .btna {
     width: 7rem;
     bottom: 0;
+    height: 2rem;
     top: 22rem;
   }
   .logo {
@@ -608,7 +603,8 @@ strong {
   }
   .btna {
     width: 7em;
-    bottom: 2px;
+    height: 2rem;
+    bottom: 16px;
   }
   .logo {
     right: 0;
