@@ -16,8 +16,7 @@ body {
   scroll-behavior: smooth;
 }
 
-
-.section{
+.section {
   padding: 8px;
   display: flex;
   align-items: center;
@@ -39,7 +38,7 @@ h1 {
   font-weight: 900;
   text-transform: uppercase;
 }
-p{
+p {
   text-align: center;
   font-size: 18px;
 }
@@ -47,18 +46,28 @@ p{
 .aiImg {
   max-width: 800px;
   border-radius: 70px;
-
 }
-.aboutText{
+
+.aboutText {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  align-self: center;
+  position: relative;
 }
-
+.aboutText::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff3a;
+  filter: blur(20px);
+}
 .aboutText h1,
-.mainTextGrid h1{
+.mainTextGrid h1 {
   font-size: 2rem;
   text-align: center;
   border-bottom: solid 1px var(--gern);
@@ -66,41 +75,59 @@ p{
   width: fit-content;
   margin: auto;
 }
-.pAbout{
+.pAbout {
   font-weight: 600;
   font-size: 1rem;
 }
 
+@media (max-width: 950px) {
+  .pAbout {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .pAbout {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 400px) {
+  .pAbout {
+    font-size: 0.6rem;
+  }
+}
+
 .circleImg {
   display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 770px) {
+  .circleImg img {
+    margin-top: 10%;
+  }
 }
 .moving-image {
-   position: relative; 
-   transform: rotate(10deg); 
-   transform: translate(1);
-   animation: moving 3s infinite linear;
-   filter: drop-shadow(8px 8px 4px var(--bleu) );
-   width: 100%;
-   margin:0 auto;
+  position: relative;
+  transform: rotate(10deg);
+  animation: moving 5s infinite linear;
+  filter: drop-shadow(8px 8px 4px var(--bleu));
+  width: 80%;
+  margin: 0 auto;
+}
+@keyframes moving {
+  0%,
+  100% {
+    left: -9%;
   }
-  @keyframes moving {
-
-    0%,100%{
-      left: 6%;
-      
-      
-    }
-    50%{
-      left: 9%;
-    
-    }
-    
+  50% {
+    left: 9%;
   }
- /* footer*/
+}
+/* footer*/
 
- .copyright-area {
+.copyright-area {
   background: #202020;
   padding: 25px 0;
 }
@@ -124,18 +151,13 @@ p{
   text-decoration: none;
   color: #878787;
 }
- /**/
+/**/
 
-
-
-
- /*  card */
-hr{
-
-  
+/*  card */
+hr {
 }
 
-.rowAbout{
+.rowAbout {
   /* display: flex; */
   justify-content: space-around;
   /* flex-wrap: wrap; */
@@ -143,10 +165,9 @@ hr{
   /* gap: 50px; */
 }
 
-
- .card-container {
-  width: 500px;
-  height: 400px;
+.card-container {
+  /* width: 500px;
+  height: 400px; */
   position: relative;
   border-radius: 10px;
   cursor: pointer;
@@ -184,33 +205,62 @@ hr{
   width: 100%;
   height: 100%;
   fill: #212121;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .cardi .content {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 3%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  margin-top: 2%;
   color: #e8e8e8;
-  padding: 20px 24px;
+  /* padding: 20px 24px; */
   line-height: 1.5;
   border-radius: 5px;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(50px);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  /* transform: translateY(50px); */
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cardi .content p {
+  font-size: 1.1rem;
+}
+@media (max-width: 965px) {
+  .cardi .content p {
+    font-size: 1rem;
+  }
 }
 
-.cardi .content .heading {
-  font-size: 32px;
-  font-weight: 700;
+@media (max-width: 870px) {
+  .cardi .content p {
+    font-size: 0.8rem;
+  }
 }
+
+@media (max-width: 767px) {
+  .card-container {
+    width: 70% !important;
+  }
+  /* .cardi{
+    width: 100%;
+    margin: auto;
+  }
+  .cardi .content{
+    width: 50%;
+    margin: auto;
+  } */
+}
+
+/* .cardi .content .heading {
+  font-size: 1rem;
+  font-weight: 700;
+  
+} */
 
 .cardi:hover .content {
   opacity: 1;
@@ -225,15 +275,15 @@ hr{
 .cardi:hover .img-content svg {
   fill: transparent;
 }
- /**/
- /*photo grid */
-.mainTextGrid{
+/**/
+/*photo grid */
+.mainTextGrid {
   width: 75%;
   text-align: center;
   margin: auto;
   border-radius: 10px;
 }
- .photo-grid {
+.photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 25px;
@@ -246,7 +296,7 @@ hr{
   background-color: #ffffffd2;
   transition: 0.3s ease;
 }
-.grid-item:hover{
+.grid-item:hover {
   box-shadow: 0 0 8px 4px var(--greenB);
   transform: scale(1.1);
 }
@@ -258,4 +308,4 @@ hr{
   border-radius: 8px;
 }
 
- /**/
+/**/
